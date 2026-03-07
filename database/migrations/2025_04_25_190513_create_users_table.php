@@ -11,10 +11,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('last_name'); // Campo obrigatório no seu sistema
             $table->string('email')->unique();
-            $table->string('role'); // Campo obrigatório
             $table->string('password');
+            $table->string('role')->default('user'); // Ex: admin, super_admin, user
             $table->rememberToken();
             $table->timestamps();
         });

@@ -29,20 +29,6 @@ Route::prefix('inventory')->name('inventory.')->group(function () {
     Route::delete('/{id}', [InventoryController::class, 'destroy'])->name('destroy');
 });
 
-// Rotas para outras páginas, como contato e produtos
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/produtos', function () {
-    $busca = request('search');
-    return view('produtos', ['busca' => $busca]);
-});
-
-Route::get('/produto_teste/{id?}', function ($id = null) {
-    return view('produto', ['id' => $id]);
-});
-
 Route::prefix('relatorio')->name('relatorio.')->group(function () {
     Route::get('/', [RelatorioController::class, 'index'])->name('index');
 });

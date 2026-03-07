@@ -10,13 +10,13 @@ class Medication extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'medication_id',
-        'type',
-        'group',
-        'quantity',
-        'ideal_quantity',
-        'minimum_quantity',
+        'name', 
+        'medication_id', 
+        'type', 
+        'group', 
+        'quantity', 
+        'ideal_quantity', 
+        'minimum_quantity', 
         'expiration_date'
     ];
 
