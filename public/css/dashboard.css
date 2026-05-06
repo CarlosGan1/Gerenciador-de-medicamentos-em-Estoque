@@ -16,14 +16,15 @@ body {
 }
 
 /* Estilo para a área do usuário */
+
 .user-info {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    min-height: 60px;  /* garante que aparece mesmo sem nome */
 }
 
 .user-avatar {
@@ -46,11 +47,12 @@ body {
 .user-name {
     font-weight: 600;
     font-size: 0.9rem;
+    color: white;
 }
 
 .user-role {
-    font-size: 0.8rem;
-    opacity: 0.8;
+    font-size: 0.75rem;
+    color: #94a3b8;
 }
 
 .dashboard-header {
@@ -70,16 +72,10 @@ body {
 
 /* Sidebar */
 
-.sidebar-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .sidebar {
     width: 240px;
     height: 100vh;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #1e293b;
@@ -87,7 +83,15 @@ body {
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    z-index: 1000; 
+    gap: 1rem;       
+    z-index: 1000;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;  
+    margin-top: 0.5rem;
 }
 
 .sidebar-header {
@@ -128,15 +132,23 @@ body {
     box-sizing: border-box; 
 }
 
+.sidebar a.active {
+    background-color: #334155;
+    color: white;
+    font-weight: bold;
+}
+
 /* Cards */
 
-.cards{
+.cards {
     display: flex;
-    grid-auto-columns: repeat(4, 1fr);
-    gap: 20px;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;  /* distribui igualmente */
     width: 100%;
+    margin-bottom: 2rem;
 }
+
 .card {
     background: #ecf0f1;
     padding: 20px;
@@ -258,6 +270,16 @@ body {
 
 .card-button::after {
     content: ' »';
+}
+
+.card-inventory-status,
+.card-pedidos,
+.card-avaliable,
+.card-alerta {
+    flex: 1;              
+    min-width: 200px;     
+    max-width: none;    
+    height: 180px;
 }
 
 /*cards pedidos*/
