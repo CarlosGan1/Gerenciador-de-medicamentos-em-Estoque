@@ -524,3 +524,46 @@ body {
     gap: 30px;
     margin-top: 20px;
 }
+
+/* Dropdown sidebar */
+.sidebar-dropdown-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.sidebar-dropdown-btn:hover,
+.sidebar-dropdown-btn.active {
+    background-color: #334155;
+}
+
+.sidebar-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.sidebar-dropdown.open .sidebar-dropdown-menu {
+    display: flex;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s;
+    font-size: 0.8rem;
+}
+
+.sidebar-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}

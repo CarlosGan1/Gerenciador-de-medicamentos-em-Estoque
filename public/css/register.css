@@ -86,3 +86,27 @@
 .btn:hover {
     background-color: #334155;
 }
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+}

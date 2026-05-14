@@ -29,9 +29,26 @@
 
         <div class="sidebar-menu">
             <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
-            <a href="{{ route('inventory.index') }}" class="{{ request()->routeIs('inventory.*') ? 'active' : '' }}">Inventário</a>
-            <a href="{{ route('relatorio.index') }}" class="{{ request()->routeIs('relatorio.*') ? 'active' : '' }}">Relatório</a>
-            <a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active' : '' }}">Cadastrar</a>
+            <a href="{{ route('inventory.index') }}" class="{{ request()->routeIs('inventory.index') ? 'active' : '' }}">Inventário</a>
+            <a href="{{ route('relatorio.index') }}" class="{{ request()->routeIs('relatorio.index') ? 'active' : '' }}">Relatório</a>
+
+            {{-- Dropdown Cadastrar --}}
+            <div class="sidebar-dropdown {{ request()->routeIs('register') || request()->routeIs('inventory.create') ? 'open' : '' }}">
+                <button class="sidebar-dropdown-btn {{ request()->routeIs('register') || request()->routeIs('inventory.create') ? 'active' : '' }}"
+                        onclick="toggleDropdown(this)">
+                    Cadastrar
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="sidebar-dropdown-menu">
+                    <a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active' : '' }}">
+                         Funcionário
+                    </a>
+
+                    <a href="{{ route('inventory.create') }}" class="{{ request()->routeIs('inventory.create') ? 'active' : '' }}">
+                         Medicamento
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -40,6 +57,12 @@
     </main>
 
     <script src="/js/dashboard.js" defer></script>
+    <script>
+        function toggleDropdown(btn) {
+            const dropdown = btn.closest('.sidebar-dropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
     @stack('scripts')
 </body>
 </html>
